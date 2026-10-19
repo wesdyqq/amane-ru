@@ -8,3 +8,5 @@ src = "src"
 build-dir = "../html"
 
 [output.html]
+additional-js = ["vim.js"]
+additional-css = ["vim.css"]

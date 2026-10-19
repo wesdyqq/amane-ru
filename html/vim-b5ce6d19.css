@@ -1,0 +1,64 @@
+/* Vim navigation hint and help, styled with the book's own theme variables. */
+
+#vim-hint {
+    position: fixed;
+    right: 12px;
+    bottom: 12px;
+    z-index: 100;
+
+    padding: 2px 8px;
+
+    font-family: var(--mono-font);
+    font-size: 12px;
+    color: var(--fg);
+    background-color: var(--bg);
+
+    border: 1px solid var(--quote-border);
+    border-radius: 6px;
+
+    opacity: 0.4;
+    cursor: pointer;
+}
+
+#vim-hint:hover,
+#vim-hint:focus {
+    opacity: 1;
+}
+
+#vim-help {
+    position: fixed;
+    right: 12px;
+    bottom: 44px;
+    z-index: 100;
+
+    padding: 10px 14px;
+
+    font-size: 14px;
+    color: var(--fg);
+    background-color: var(--bg);
+
+    border: 1px solid var(--quote-border);
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgb(0 0 0 / 25%);
+}
+
+#vim-help table {
+    margin: 4px 0 0;
+    border: none;
+}
+
+#vim-help td {
+    padding: 1px 12px 1px 0;
+    border: none;
+}
+
+#vim-help kbd {
+    padding: 1px 5px;
+
+    font-family: var(--mono-font);
+    font-size: 12px;
+
+    border: 1px solid var(--quote-border);
+    border-bottom-width: 2px;
+    border-radius: 4px;
+}
