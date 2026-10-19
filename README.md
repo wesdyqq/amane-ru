@@ -4,6 +4,8 @@
 
 - Оригинал: <https://mystiafin.github.io/amane/>
 - Исходники: <https://github.com/MystiaFin/amane>
+- Репозиторий перевода: <https://github.com/wesdyqq/amane-ru>
+- HTML-версия: <https://wesdyqq.github.io/amane-ru/>
 - Проверенная версия: **0.1.2**, Rust edition 2024
 - Дата сверки: **19 октября 2026 года**
 
