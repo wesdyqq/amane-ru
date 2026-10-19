@@ -1,0 +1,10 @@
+[book]
+title = "Руководство Amane"
+authors = ["mystiafin"]
+language = "ru"
+src = "src"
+
+[build]
+build-dir = "../html"
+
+[output.html]

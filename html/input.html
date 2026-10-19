@@ -1,0 +1,420 @@
+<!DOCTYPE HTML>
+<html lang="ru" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Ввод - Руководство Amane</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="favicon-8114d1fc.png">
+        <link rel="stylesheet" href="css/variables-8adf115d.css">
+        <link rel="stylesheet" href="css/general-e96d0476.css">
+        <link rel="stylesheet" href="css/chrome-d279d366.css">
+        <link rel="stylesheet" href="css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "searchindex-c6a98087.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc-65284f81.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Руководство Amane</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <h1 id="ввод"><a class="header" href="#ввод">Ввод</a></h1>
+<p>Бару нужны кнопки: клик по рабочему столу переключает его, прокрутка над громкостью меняет звук, клик по часам открывает календарь.</p>
+<p>В этой главе: клики, наведение, прокрутка, перетаскивание, вид указателя и клавиши.</p>
+<h3 id="обработка-клика"><a class="header" href="#обработка-клика">Обработка клика</a></h3>
+<pre class="playground"><code class="language-rust">use amane::{App, Button, LayerWindow, Parent, Rectangle, Text};
+
+fn main() {
+    App::new().window(view).run();
+}
+
+fn view() -&gt; LayerWindow {
+    LayerWindow::new().width(200.0).height(40.0).child(
+        Rectangle::new()
+            .width(Parent)
+            .height(Parent)
+            .fill("#1e1e2e")
+            .on_click(clicked)
+            .child(Text::new("click me")),
+    )
+}
+
+fn clicked(button: Button) {
+    println!("clicked with {button:?}");
+}</code></pre>
+<h3 id="как-ввод-доходит-до-обработчика"><a class="header" href="#как-ввод-доходит-до-обработчика">Как ввод доходит до обработчика</a></h3>
+<p>Обработчики ввода задаются у <code>Rectangle</code>. Каждый кадр Amane запоминает, где оказался каждый прямоугольник с обработчиком. При клике он находит прямоугольник под указателем и вызывает его обработчик.</p>
+<p>Если прямоугольники перекрываются, событие получает нарисованный последним. Это самый внутренний и верхний: кнопка внутри панели получает клик, а не панель.</p>
+<p>Обработчик выполняется после исчезновения кадра, поэтому не может менять виджеты напрямую. Он меняет состояние, обычно записывая в сервис, а представление показывает изменение на следующем кадре:</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn clicked(_: Button) {
+    Counter::write().count += 1;
+}
+<span class="boring">}</span></code></pre>
+<h3 id="обработчики-мыши"><a class="header" href="#обработчики-мыши">Обработчики мыши</a></h3>
+<p>Все это методы <code>Rectangle</code>:</p>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Метод</th><th>Когда вызывается</th><th>Что получает</th></tr>
+</thead>
+<tbody>
+<tr><td><code>on_click</code></td><td>кнопка нажата и отпущена над одним и тем же прямоугольником</td><td><code>Button</code>: <code>Left</code>, <code>Right</code> или <code>Middle</code></td></tr>
+<tr><td><code>on_hover</code></td><td>когда указатель входит и когда выходит</td><td><code>true</code> при входе, <code>false</code> при выходе</td></tr>
+<tr><td><code>on_scroll</code></td><td>на каждый шаг колеса или движение тачпада</td><td><code>Scroll</code> с <code>x</code> и <code>y</code></td></tr>
+<tr><td><code>on_move</code></td><td>при каждом движении, пока указатель над прямоугольником</td><td><code>Point</code></td></tr>
+<tr><td><code>on_drag</code></td><td>при нажатии левой кнопкой и при каждом движении до отпускания</td><td><code>Point</code></td></tr>
+</tbody>
+</table>
+</div>
+<p><code>Point</code> содержит <code>x</code> и <code>y</code> в пикселях от левого верхнего угла прямоугольника. Во время <code>on_drag</code> точка продолжает приходить даже после выхода указателя за прямоугольник, поэтому она может быть отрицательной или больше размеров. Ограничивайте её.</p>
+<p><code>Scroll</code> измеряется в строках, поэтому колесо и тачпад двигают на одинаковую величину. Положительный <code>y</code> — вниз, положительный <code>x</code> — вправо.</p>
+<h3 id="передача-значений-в-обработчики"><a class="header" href="#передача-значений-в-обработчики">Передача значений в обработчики</a></h3>
+<p>Обработчик может быть функцией, как <code>clicked</code> выше, или замыканием. Замыкание может перенести значения из представления:</p>
+<pre class="playground"><code class="language-rust">use amane::{App, Column, LayerWindow, Parent, Rectangle, Text, Widget};
+
+fn main() {
+    App::new().window(view).run();
+}
+
+fn view() -&gt; LayerWindow {
+    let mut rows: Vec&lt;Box&lt;dyn Widget&gt;&gt; = Vec::new();
+
+    for number in 1..=3 {
+        let row = Rectangle::new()
+            .width(Parent)
+            .height(30.0)
+            .on_click(move |_| println!("clicked row {number}"))
+            .child(Text::new(format!("row {number}")));
+
+        rows.push(Box::new(row));
+    }
+
+    LayerWindow::new().width(200.0).height(90.0).child(Column::new(rows))
+}</code></pre>
+<p><code>move</code> копирует <code>number</code> в замыкание, поэтому каждая строка помнит свой номер. <code>|_|</code> игнорирует аргумент <code>Button</code>.</p>
+<p>Замыкание не может заимствовать данные из <code>read()</code> сервиса, потому что обработчик живёт дольше представления. Сначала скопируйте нужное:</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let id = workspace.id();                                   // копия, не заимствование
+let name = String::from(device.name());                    // собственная копия текста
+
+Rectangle::new()
+    .width(30.0)
+    .height(Parent)
+    .on_click(move |_| Workspaces::focus(id))
+<span class="boring">}</span></code></pre>
+<h3 id="эффект-наведения"><a class="header" href="#эффект-наведения">Эффект наведения</a></h3>
+<p>Для эффекта наведения нужно состояние: представление должно знать, находится ли указатель внутри:</p>
+<pre class="playground"><code class="language-rust">use std::time::Duration;
+
+use amane::{App, Color, LayerWindow, Parent, Rectangle, Service};
+
+struct Hover {
+    inside: bool,
+}
+
+impl Service for Hover {
+    fn new() -&gt; Self {
+        Self { inside: false }
+    }
+
+    fn interval() -&gt; Duration {
+        Duration::from_secs(3600)
+    }
+}
+
+fn main() {
+    App::new().window(view).run();
+}
+
+fn view() -&gt; LayerWindow {
+    let hover = Hover::read();
+
+    let fill = if hover.inside { Color::from("#45475a") } else { Color::from("#1e1e2e") };
+
+    LayerWindow::new().width(200.0).height(40.0).child(
+        Rectangle::new()
+            .width(Parent)
+            .height(Parent)
+            .fill(fill)
+            .on_hover(|inside| Hover::write().inside = inside),
+    )
+}</code></pre>
+<h3 id="изменение-указателя"><a class="header" href="#изменение-указателя">Изменение указателя</a></h3>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>Rectangle::new()
+    .width(100.0)
+    .height(30.0)
+    .cursor(Pointer)
+    .on_click(clicked)
+<span class="boring">}</span></code></pre>
+<p>Пока указатель над прямоугольником, он выглядит соответствующим образом. Имена импортируются из <code>amane</code>: <code>Default</code>, <code>Pointer</code> (рука), <code>Text</code>, <code>Grab</code>, <code>Grabbing</code>, <code>Move</code>, <code>NotAllowed</code>, <code>Wait</code>, <code>Crosshair</code> и стрелки изменения размера <code>ResizeTop</code>, <code>ResizeBottom</code>, <code>ResizeLeft</code>, <code>ResizeRight</code>, <code>ResizeTopLeft</code>, <code>ResizeTopRight</code>, <code>ResizeBottomLeft</code>, <code>ResizeBottomRight</code>, <code>ResizeHorizontal</code>, <code>ResizeVertical</code>.</p>
+<p><code>Text</code>-курсор и <code>Text</code>-виджет имеют одинаковое имя, оба из <code>amane</code>. Rust различает их по использованию. Если хотите явно — пишите <code>Cursor::Text</code>.</p>
+<p><code>TextInput</code> сам показывает текстовый курсор.</p>
+<h3 id="трансформированные-прямоугольники"><a class="header" href="#трансформированные-прямоугольники">Трансформированные прямоугольники</a></h3>
+<p>Ввод следует за трансформацией. Повёрнутая кнопка реагирует только внутри повёрнутой формы, а не внутри прямоугольника, который она занимала до поворота.</p>
+<h3 id="ввод-с-клавиатуры"><a class="header" href="#ввод-с-клавиатуры">Ввод с клавиатуры</a></h3>
+<p>Клавиши приходят окну, а не виджету. Сначала окно должно попросить фокус клавиатуры, затем обрабатывает клавиши через <code>on_key</code>:</p>
+<pre class="playground"><code class="language-rust">use std::process;
+
+use amane::{App, Key, Keyboard, LayerWindow, Text};
+
+fn main() {
+    App::new().window(view).run();
+}
+
+fn view() -&gt; LayerWindow {
+    LayerWindow::new()
+        .width(300.0)
+        .height(40.0)
+        .keyboard(Keyboard::Exclusive)
+        .on_key(key_pressed)
+        .child(Text::new("press escape to quit"))
+}
+
+fn key_pressed(key: Key) {
+    if key == Key::Escape {
+        process::exit(0);
+    }
+}</code></pre>
+<p><code>std::process</code> — из стандартной библиотеки Rust.</p>
+<p><code>Key</code> — это одно из:</p>
+<ul>
+<li><code>Character(char)</code>: клавиша, которая что-то печатает, уже с учётом Shift, например <code>Character('A')</code>;</li>
+<li><code>Enter</code>, <code>Escape</code>, <code>Tab</code>, <code>Backspace</code>, <code>Space</code>;</li>
+<li><code>Up</code>, <code>Down</code>, <code>Left</code>, <code>Right</code>, <code>Home</code>, <code>End</code>;</li>
+<li><code>Other</code>: любая клавиша, для которой у Amane пока нет имени.</li>
+</ul>
+<h3 id="когда-фокус-у-textinput"><a class="header" href="#когда-фокус-у-textinput">Когда фокус у <code>TextInput</code></a></h3>
+<p>Сфокусированный <code>TextInput</code> получает клавиши раньше окна, потому что печатать нужно в поле:</p>
+<ul>
+<li>буквы, <code>Space</code>, <code>Backspace</code>, <code>Enter</code>, <code>Left</code>, <code>Right</code>, <code>Home</code> и <code>End</code> идут только в поле;</li>
+<li><code>Up</code>, <code>Down</code>, <code>Tab</code> и <code>Other</code> пропускают поле и идут в <code>on_key</code> окна. Так стрелки могут перемещать по списку, пока вы печатаете в поиске;</li>
+<li><code>Escape</code> снимает фокус с поля и затем также передаётся окну, которое может захотеть закрыться.</li>
+</ul>
+<blockquote>
+<p><strong>Уточнение.</strong> <code>Enter</code> забирается полем всегда. Если у поля нет <code>on_submit</code>, нажатие просто ничего не делает и до <code>on_key</code> окна не доходит. <code>Up</code>/<code>Down</code>/<code>Tab</code>/<code>Other</code> не передаются полю, поэтому в тексте не появляются.</p>
+</blockquote>
+<h3 id="термины"><a class="header" href="#термины">Термины</a></h3>
+<ul>
+<li><strong>Обработчик (handler):</strong> функция, которую Amane вызывает при событии.</li>
+<li><strong>Цель (target):</strong> область, которую прямоугольник с обработчиками занимал в последнем кадре.</li>
+<li><strong>Фокус клавиатуры:</strong> окно, которому композитор отправляет клавиши.</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="services.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="animation.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="services.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="animation.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr-ef4e11c1.min.js"></script>
+        <script src="mark-09e88c2c.min.js"></script>
+        <script src="searcher-09f2665d.js"></script>
+
+        <script src="clipboard-1626706a.min.js"></script>
+        <script src="highlight-abc7f01d.js"></script>
+        <script src="book-609e4cb8.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>
